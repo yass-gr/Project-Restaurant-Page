@@ -1,0 +1,220 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-color: #d9a796;
+  --header-bg: #400a0f;
+  --txt-clr: #f2efe4;
+}
+
+body {
+  background-color: var(--bg-color);
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+header {
+  display: flex;
+  background-color: var(--header-bg);
+  width: 90%;
+  height: 7vh;
+  margin-top: 1rem;
+  border-radius: 15px;
+  align-items: center;
+}
+
+header h1 {
+  font-family: "rest";
+  height: 100%;
+  color: var(--txt-clr);
+  align-self: center;
+  align-content: center;
+  padding: 0.7rem;
+  font-size: 1.4rem;
+  user-select: none;
+}
+
+header span {
+  height: 100%;
+  color: var(--txt-clr);
+  align-self: center;
+  align-content: center;
+  padding: 0.7rem;
+  font-size: 2rem;
+  margin-left: 5rem;
+}
+
+header button {
+  background-color: transparent;
+  border: none;
+  padding-inline: 1rem;
+  padding-block: 0.5rem;
+  font-size: 1.05rem;
+  font-family: "Cormorant", serif;
+  color: var(--txt-clr);
+  border-radius: 10px;
+  transition: 0.2s ease-in-out;
+  z-index: 10;
+  cursor: pointer;
+  margin-inline: 0.2rem;
+}
+
+header nav {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+@font-face {
+  font-family: rest;
+  src: url(Mileast.otf);
+}
+
+.current {
+  background-color: var(--bg-color);
+  color: var(--header-bg);
+}
+
+#content {
+  flex-grow: 1;
+  margin-top: 1.5rem;
+  width: 90%;
+  border-radius: 15px 15px 0 0;
+  border: 2px dashed var(--header-bg);
+}
+.home {
+  background: url(restBg.jpg);
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.menu {
+  background: url(menuBg.jpg);
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.homeTitle {
+  color: var(--txt-clr);
+  font-family: rest;
+  text-align: center;
+  padding-block: 3rem;
+  font-size: 3rem;
+}
+.homeImg {
+  width: 35vw;
+  filter: saturate(1);
+  animation: rotatePizza 15s linear infinite;
+  margin-top: 3rem;
+}
+@keyframes rotatePizza {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.homeBtn {
+  background-color: transparent;
+  border: 2px dashed var(--txt-clr);
+  border-radius: 10px;
+  height: 2.7rem;
+  padding-inline: 40px;
+  margin-top: 4rem;
+  font-size: 1rem;
+  color: var(--txt-clr);
+  cursor: pointer;
+  background: rgba(0, 0, 0, 0.303);
+}
+
+.homeBtn:hover {
+  background-color: var(--bg-color);
+  color: var(--header-bg);
+}
+
+.menuTitle {
+  padding-block: 30px;
+  font-size: 2rem;
+  font-family: "rest";
+  color: var(--txt-clr);
+}
+
+.platesDiv {
+  width: 90%;
+  padding: 2.5rem;
+  border: 2px dashed var(--txt-clr);
+  border-radius: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-auto-rows: 170px;
+  gap: 10px;
+}
+
+.plateCard {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(6, 1fr);
+  grid-template-areas:
+    "img title"
+    "img price"
+    "img desc"
+    "img desc"
+    "img desc"
+    "btn btn";
+
+  color: var(--txt-clr);
+}
+
+.mdi-food {
+  grid-area: img;
+  font-size: 7rem;
+  place-self: center;
+}
+
+.plateName {
+  grid-area: title;
+}
+
+.platePrice {
+  grid-area: price;
+  color: yellow;
+}
+.plateDesc {
+  grid-area: desc;
+}
+
+.plateReserve {
+  grid-area: btn;
+  background: none;
+  border: 1px dashed var(--txt-clr);
+  height: 30px;
+  font-size: large;
+  color: var(--txt-clr);
+  cursor: pointer;
+}
+
+.plateReserve:hover {
+  background-color: var(--bg-color);
+  color: var(--header-bg);
+}
+
+.abTitle {
+  text-align: center;
+  padding-block: 3rem;
+}
+.abDesc {
+  padding: 30px;
+}
